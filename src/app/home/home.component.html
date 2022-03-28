@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row py-5 bg-dark" id="banner">
+    <div class="col my-auto mx-auto text-center">
+      <h1 class="text-warning">FAME</h1>
+      <p class="text-white">Fluxo de Acesso à Margem Esquerda</p>
+    </div>
+    <div class="col-md-8 my-auto text-center">
+      <img src="https://picsum.photos/700/400" alt="" />
+    </div>
+  </div>
+
+  <div class="row py-5 bg-secondary">
+    <div class="col-md-1"></div>
+    <div class="col">
+      <div class="card">
+        <img class="card-img-top" src="https://picsum.photos/300/200" alt="" />
+        <div class="card-body text-center">
+          <h2>Solicitar Acesso</h2>
+          <p class="card-text">Clique aqui para solicitar acesso ao FAME</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-block btn-warning" [routerLink]="['acesso']">
+            Solicitar Acesso
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img class="card-img-top" src="https://picsum.photos/300/200" alt="" />
+        <div class="card-body text-center">
+          <h2>Login no FAME</h2>
+          <p class="card-text">Clique aqui para acessar a sua conta</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-block btn-primary" [routerLink]="['acesso']">
+            Entrar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img class="card-img-top" src="https://picsum.photos/300/200" alt="" />
+        <div class="card-body text-center">
+          <h2>Contatos</h2>
+          <p class="card-text">Entre em contato com a FAME</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-block btn-info" [routerLink]="['contato']">
+            Contate-nos
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>

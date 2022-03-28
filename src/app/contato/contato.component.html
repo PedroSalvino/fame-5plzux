@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row py-3 px-3">
+    <div class="col bg-dark">
+      <h2 class="text-center text-white">Entre em contato com a equipe!</h2>
+      <div class="area-form col-md-10 mx-auto py-5 px-auto bg-secondary">
+        <!-- Nome -->
+        <div class="input-group my-5">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="nomecontato"
+              ><i class="fas fa-user"></i
+            ></label>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nome Completo"
+            aria-label="Nome Completo"
+            id="nomecontato"
+          />
+        </div>
+        <!-- E-mail -->
+        <div class="input-group my-5">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="emailcontato"
+              ><i class="fas fa-envelope"></i
+            ></label>
+          </div>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="E-mail Corporativo"
+            aria-label="E-mail Corporativo"
+            id="emailcontato"
+          />
+        </div>
+        <!-- Empresa -->
+        <div class="input-group my-5">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="empresacontato"
+              ><i class="fas fa-building"></i
+            ></label>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Empresa"
+            aria-label="Empresa"
+            id="empresacontato"
+          />
+        </div>
+        <!-- Assunto -->
+        <div class="input-group my-5">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="assuntocontato"
+              ><i class="fas fa-quote-left"></i
+            ></label>
+          </div>
+          <select class="form-control" aria-label="Assunto" id="assuntocontato">
+            <option value="0" selected disabled>Selecione o assunto</option>
+            <option value="1">Bug</option>
+            <option value="2">Dúvida</option>
+            <option value="3">Problema</option>
+            <option value="4">Sugestão</option>
+          </select>
+        </div>
+        <!-- Mensagem -->
+        <div class="input-group my-5">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="mensagemcontato"
+              ><i class="fas fa-paragraph"></i
+            ></label>
+          </div>
+          <textarea
+            class="form-control"
+            placeholder="Mensagem"
+            aria-label="Mensagem"
+            id="mensagemcontato"
+            rows="6"
+          ></textarea>
+        </div>
+        <!-- button -->
+        <div>
+          <button type="button" class="btn btn-info btn-block col-md-8 mx-auto">
+            <span><i class="fas fa-paper-plane"></i></span> Enviar Mensagem
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
