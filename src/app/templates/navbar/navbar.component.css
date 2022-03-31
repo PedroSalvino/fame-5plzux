@@ -5,7 +5,7 @@
 .nav-link:active,
 .nav-link:focus {
   color: var(--roxo) !important;
-  border-bottom: 2px solid var(--roxo);
+  border: 2px solid var(--roxo);
 }
 .navbar {
   position: sticky !important;
