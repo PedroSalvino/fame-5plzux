@@ -1,0 +1,29 @@
+.titulo-cadastro {
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: 2px solid var(--roxo);
+}
+
+.titulo-login {
+  font-size: 1.8rem;
+  font-weight: 400;
+  border: 2px solid var(--ciano);
+}
+
+.area-form-cadastro {
+  border: 2px solid var(--roxo);
+  padding: 30px;
+}
+
+.area-form-login {
+  border: 2px solid var(--ciano);
+  padding: 50px;
+}
+
+.container-fluid {
+  border-bottom: 1px solid var(--cinza);
+}
+
+.bg-cinza-fade {
+  background-color: rgba(81, 81, 81, 0.3);
+}
