@@ -1,58 +1,74 @@
 <div class="container-fluid">
-  <div class="row py-5 bg-dark" id="banner">
+  <div class="row py-5 bg-escuro" id="banner">
     <div class="col my-auto mx-auto text-center">
-      <h1 class="text-warning">FAME</h1>
-      <p class="text-white">Fluxo de Acesso à Margem Esquerda</p>
+      <h1 class="text-roxo">FAME</h1>
+      <p class="text-claro">Fluxo de Acesso à Margem Esquerda</p>
     </div>
     <div class="col-md-8 my-auto text-center">
       <img src="https://picsum.photos/700/400" alt="" />
     </div>
   </div>
 
-  <div class="row py-5 bg-secondary">
+  <div class="row py-5 bg-cinza">
     <div class="col-md-1"></div>
     <div class="col">
-      <div class="card">
-        <img class="card-img-top" src="https://picsum.photos/300/200" alt="" />
+      <div class="card bg-escuro">
+        <div class="card-header text-center">
+          <span class="h5 text-ciano"><i class="fas fa-key"></i></span>
+        </div>
         <div class="card-body text-center">
-          <h2>Solicitar Acesso</h2>
-          <p class="card-text">Clique aqui para solicitar acesso ao FAME</p>
+          <h2 class="card-title text-white">Solicitar Acesso</h2>
+          <p class="card-text text-claro">Solicite aqui seu primeiro acesso</p>
         </div>
         <div class="card-footer">
-          <button class="btn btn-block btn-warning" [routerLink]="['acesso']">
+          <button
+            class="btn btn-block bg-roxo text-claro"
+            [routerLink]="['acesso']"
+          >
             Solicitar Acesso
           </button>
         </div>
       </div>
     </div>
     <div class="col">
-      <div class="card">
-        <img class="card-img-top" src="https://picsum.photos/300/200" alt="" />
+      <div class="card bg-escuro">
+        <div class="card-header text-center">
+          <span class="h5 text-ciano"><i class="fas fa-sign-in-alt"></i></span>
+        </div>
         <div class="card-body text-center">
-          <h2>Login no FAME</h2>
-          <p class="card-text">Clique aqui para acessar a sua conta</p>
+          <h2 class="card-title text-white">Acessar conta</h2>
+          <p class="card-text text-claro">Entre e monitore o fluxo de hoje</p>
         </div>
         <div class="card-footer">
-          <button class="btn btn-block btn-primary" [routerLink]="['acesso']">
+          <button
+            class="btn btn-block bg-ciano text-escuro"
+            [routerLink]="['acesso']"
+          >
             Entrar
           </button>
         </div>
       </div>
     </div>
     <div class="col">
-      <div class="card">
-        <img class="card-img-top" src="https://picsum.photos/300/200" alt="" />
+      <div class="card bg-escuro">
+        <div class="card-header text-center">
+          <span class="h5 text-ciano"><i class="fas fa-envelope"></i></span>
+        </div>
         <div class="card-body text-center">
-          <h2>Contatos</h2>
-          <p class="card-text">Entre em contato com a FAME</p>
+          <h2 class="card-title text-white">Contato</h2>
+          <p class="card-text text-claro">Entre em contato com a equipe</p>
         </div>
         <div class="card-footer">
-          <button class="btn btn-block btn-info" [routerLink]="['contato']">
-            Contate-nos
+          <button
+            class="btn btn-block bg-roxo text-claro"
+            [routerLink]="['contato']"
+          >
+            Contatar
           </button>
         </div>
       </div>
     </div>
+
     <div class="col-md-1"></div>
   </div>
 </div>
