@@ -1,8 +1,8 @@
-#banner {
-  height: 500px;
-}
 .card-title {
   color: var(--escuro);
   font-size: 1.5rem;
   font-weight: 600;
+}
+.img-banner {
+  width: 60%;
 }
