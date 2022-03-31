@@ -6,3 +6,6 @@
 .img-banner {
   width: 60%;
 }
+.container-fluid {
+  border-bottom: 1px solid var(--cinza);
+}

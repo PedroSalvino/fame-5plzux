@@ -51,3 +51,14 @@ textarea {
 .text-claro {
   color: var(--claro) !important;
 }
+
+/* Gradient */
+.bg-gradient {
+  background: rgb(35, 35, 42);
+  background: linear-gradient(
+    171deg,
+    rgba(35, 35, 42, 1) 19%,
+    rgba(63, 25, 100, 1) 67%,
+    rgba(85, 17, 146, 1) 100%
+  );
+}
