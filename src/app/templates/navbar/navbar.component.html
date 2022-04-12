@@ -43,10 +43,25 @@
     </ul>
 
     <div>
-      <button class="btn bg-roxo text-light mx-2">
+      <button
+        class="btn bg-ciano text-light"
+        [routerLink]="['dashboard']"
+        [routerLink]="['active']"
+      >
+        <i class="fas fa-tachometer-alt"></i>
+      </button>
+      <button
+        class="btn bg-roxo text-light mx-2"
+        [routerLink]="['perfil']"
+        [routerLink]="['active']"
+      >
         <i class="fas fa-user"></i>
       </button>
-      <button class="btn bg-cinza text-light">
+      <button
+        class="btn bg-cinza text-light"
+        [routerLink]="['']"
+        [routerLink]="['active']"
+      >
         <i class="fas fa-power-off"></i>
       </button>
     </div>
