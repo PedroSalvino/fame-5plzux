@@ -1,90 +1,114 @@
 <div class="container-fluid bg-escuro">
   <div class="row py-5 bg-cinza-fade">
-    <div class="col-md-8 py-3 px-3 mx-auto">
-      <h2 class="text-center text-roxo titulo-contato bg-escuro py-2">
+    <div class="col-md-10 py-3 px-3 mx-auto">
+      <h2 class="text-center text-roxo titulo bg-escuro py-2">
         <span><i class="fas fa-user-circle"></i><br />Perfil</span>
       </h2>
 
       <div class="area-form bg-escuro mt-5">
-        <!-- Nome -->
         <div class="input-group my-2">
           <div class="input-group-prepend">
-            <label class="input-group-text text-cinza" for="nomecontato"
+            <label class="input-group-text text-roxo" for="nomeperfil"
               ><i class="fas fa-user"></i
             ></label>
           </div>
           <input
+            readonly
             type="text"
             class="form-control"
             placeholder="Nome Completo"
             aria-label="Nome Completo"
-            id="nomecontato"
+            id="nomeperfil"
           />
+          <div class="input-group-prepend">
+            <button class="btn bg-cinza text-ciano">
+              <i class="fas fa-edit"></i>
+            </button>
+          </div>
         </div>
-        <!-- E-mail -->
         <div class="input-group my-5">
           <div class="input-group-prepend">
-            <label class="input-group-text text-cinza" for="emailcontato"
+            <label class="input-group-text text-roxo" for="emailperfil"
               ><i class="fas fa-envelope"></i
             ></label>
           </div>
           <input
+            readonly
             type="email"
             class="form-control"
-            placeholder="E-mail Corporativo"
+            placeholder="usuario@comercial.com.br"
             aria-label="E-mail Corporativo"
-            id="emailcontato"
+            id="emailperfil"
           />
+          <div class="input-group-prepend">
+            <button class="btn bg-cinza text-ciano">
+              <i class="fas fa-edit"></i>
+            </button>
+          </div>
         </div>
-        <!-- Empresa -->
         <div class="input-group my-5">
           <div class="input-group-prepend">
-            <label class="input-group-text text-cinza" for="empresacontato"
+            <label class="input-group-text text-roxo" for="cpfperfil"
+              ><i class="fas fa-id-card"></i
+            ></label>
+          </div>
+          <input
+            readonly
+            type="text"
+            class="form-control"
+            placeholder="123.123.123-12"
+            aria-label="CPF"
+            id="cpfperfil"
+          />
+          <div class="input-group-prepend">
+            <button class="btn bg-cinza text-ciano">
+              <i class="fas fa-edit"></i>
+            </button>
+          </div>
+        </div>
+        <div class="input-group my-5">
+          <div class="input-group-prepend">
+            <label class="input-group-text text-roxo" for="empresaperfil"
               ><i class="fas fa-building"></i
             ></label>
           </div>
           <input
+            readonly
             type="text"
             class="form-control"
             placeholder="Empresa"
             aria-label="Empresa"
-            id="empresacontato"
+            id="empresaperfil"
           />
+          <div class="input-group-prepend">
+            <button class="btn bg-cinza text-ciano">
+              <i class="fas fa-edit"></i>
+            </button>
+          </div>
         </div>
-        <!-- Assunto -->
         <div class="input-group my-5">
           <div class="input-group-prepend">
-            <label class="input-group-text text-cinza" for="assuntocontato"
-              ><i class="fas fa-quote-left"></i
+            <label class="input-group-text text-roxo" for="cargoperfil"
+              ><i class="fas fa-suitcase"></i
             ></label>
           </div>
-          <select class="form-control" aria-label="Assunto" id="assuntocontato">
-            <option value="0" selected disabled>Selecione o assunto</option>
-            <option value="1">Bug</option>
-            <option value="2">Dúvida</option>
-            <option value="3">Problema</option>
-            <option value="4">Sugestão</option>
-          </select>
-        </div>
-        <!-- Mensagem -->
-        <div class="input-group my-5">
-          <div class="input-group-prepend">
-            <label class="input-group-text text-cinza" for="mensagemcontato"
-              ><i class="fas fa-paragraph"></i
-            ></label>
-          </div>
-          <textarea
+          <input
+            readonly
+            type="text"
             class="form-control"
-            placeholder="Mensagem"
-            aria-label="Mensagem"
-            id="mensagemcontato"
-            rows="6"
-          ></textarea>
+            placeholder="Cargo"
+            aria-label="Cargo"
+            id="cargoperfil"
+          />
+          <div class="input-group-prepend">
+            <button class="btn bg-cinza text-ciano">
+              <i class="fas fa-edit"></i>
+            </button>
+          </div>
         </div>
-        <!-- button -->
         <div>
           <button type="button" class="btn bg-ciano btn-block col-md-8 mx-auto">
-            <span><i class="fas fa-paper-plane"></i></span> Enviar Mensagem
+            Salvar Alterações
           </button>
         </div>
       </div>
