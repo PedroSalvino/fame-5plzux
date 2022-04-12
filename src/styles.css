@@ -62,3 +62,7 @@ textarea {
     rgba(85, 17, 146, 1) 100%
   );
 }
+
+.bg-cinza-fade {
+  background-color: rgba(81, 81, 81, 0.3);
+}
