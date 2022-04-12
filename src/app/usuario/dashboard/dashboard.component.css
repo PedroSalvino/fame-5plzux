@@ -1,0 +1,6 @@
+.bg-cinza-fade {
+  background-color: rgba(81, 81, 81, 0.3);
+}
+.container-fluid {
+  border-bottom: 1px solid var(--cinza);
+}
