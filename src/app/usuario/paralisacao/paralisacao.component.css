@@ -1,0 +1,11 @@
+.titulo {
+  font-size: 1.7rem;
+  font-weight: 400;
+  border: 2px solid #ae58f8;
+  color: #ae58f8 !important;
+}
+
+.area-form {
+  border: 2px solid #ae58f8;
+  padding: 30px;
+}
