@@ -1,0 +1,19 @@
+.titulo-contato {
+  font-size: 1.7rem;
+  font-weight: 400;
+  border: 2px solid #ae58f8;
+  color: #ae58f8 !important;
+}
+
+.area-form-contato {
+  border: 2px solid #ae58f8;
+  padding: 30px;
+}
+
+.bg-cinza-fade {
+  background-color: rgba(81, 81, 81, 0.3);
+}
+
+.container-fluid {
+  border-bottom: 1px solid var(--cinza);
+}
