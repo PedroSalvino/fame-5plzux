@@ -14,6 +14,7 @@ import { PerfilComponent } from './usuario/perfil/perfil.component';
 import { ParalisacaoComponent } from './usuario/paralisacao/paralisacao.component';
 import { RouterModule } from '@angular/router';
 import { ContatoComponent } from './contato/contato.component';
+import { UsuariosComponent } from './admin/usuarios/usuarios.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { ContatoComponent } from './contato/contato.component';
       { path: 'dashboard', component: DashboardComponent },
       { path: 'perfil', component: PerfilComponent },
       { path: 'paralisacao', component: ParalisacaoComponent },
+      { path: 'usuarios', component: UsuariosComponent },
     ]),
   ],
   declarations: [
@@ -40,6 +42,7 @@ import { ContatoComponent } from './contato/contato.component';
     DashboardComponent,
     PerfilComponent,
     ParalisacaoComponent,
+    UsuariosComponent,
   ],
   bootstrap: [AppComponent],
 })
