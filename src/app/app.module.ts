@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FooterComponent } from './templates/footer/footer.component';
 import { NavbarComponent } from './templates/navbar/navbar.component';
-import { LoginComponent } from './templates/modais/login/login.component';
 import { DashboardComponent } from './usuario/dashboard/dashboard.component';
 import { PerfilComponent } from './usuario/perfil/perfil.component';
 import { ParalisacaoComponent } from './usuario/paralisacao/paralisacao.component';
@@ -38,7 +37,6 @@ import { UsuariosComponent } from './admin/usuarios/usuarios.component';
     ContatoComponent,
     FooterComponent,
     NavbarComponent,
-    LoginComponent,
     DashboardComponent,
     PerfilComponent,
     ParalisacaoComponent,
