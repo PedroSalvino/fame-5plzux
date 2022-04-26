@@ -10,8 +10,9 @@ export class DashboardComponent implements OnInit {
   constructor() {}
   @ViewChild('grafico', { static: true }) elemento: ElementRef;
 
+  chart: Chart;
   ngOnInit() {
-    new Chart(this.elemento.nativeElement, {
+    this.chart = new Chart(this.elemento.nativeElement, {
       type: 'bar',
       data: {
         labels: [
@@ -69,4 +70,10 @@ export class DashboardComponent implements OnInit {
       },
     });
   }
+
+  fluxoAtual() {
+    this.chart.destroy;
+  }
+
+  fluxoAntigo() {}
 }
