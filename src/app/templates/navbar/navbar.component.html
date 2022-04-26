@@ -18,7 +18,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto" *ngIf="logado == false">
       <li class="nav-item active mx-auto">
         <a class="nav-link" [routerLink]="['']" routerLinkActive="['active']"
           >Início</a
@@ -42,7 +42,7 @@
       </li>
     </ul>
 
-    <div>
+    <div *ngIf="logado == true">
       <button
         class="btn bg-ciano text-light"
         [routerLink]="['dashboard']"
@@ -60,10 +60,45 @@
       <button
         class="btn bg-cinza text-light"
         data-toggle="modal"
-        data-target="#modalLogout"
+        data-target="#confLogout"
       >
         <i class="fas fa-power-off"></i>
       </button>
     </div>
   </div>
 </nav>
+
+<div
+  class="modal fade"
+  id="confLogout"
+  tabindex="-1"
+  aria-labelledby="confLogoutLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-escuro">
+        <p class="modal-title mx-auto text-claro" id="confLogoutLabel">
+          <span><i class="fas fa-exclamation-circle"></i></span>
+          Confirmação de Logout
+        </p>
+      </div>
+      <div class="modal-body">
+        <p class="text-center text-escuro">Deseja mesmo sair?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn bg-cinza" data-dismiss="modal">
+          Não
+        </button>
+        <button
+          type="button"
+          class="btn bg-roxo"
+          data-dismiss="modal"
+          [routerLink]="['']"
+        >
+          Sim
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

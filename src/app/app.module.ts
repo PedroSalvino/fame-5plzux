@@ -14,6 +14,7 @@ import { ParalisacaoComponent } from './usuario/paralisacao/paralisacao.componen
 import { RouterModule } from '@angular/router';
 import { ContatoComponent } from './contato/contato.component';
 import { UsuariosComponent } from './admin/usuarios/usuarios.component';
+import { AuthService } from './templates/auth.service';
 
 @NgModule({
   imports: [
@@ -43,5 +44,6 @@ import { UsuariosComponent } from './admin/usuarios/usuarios.component';
     UsuariosComponent,
   ],
   bootstrap: [AppComponent],
+  providers: [AuthService],
 })
 export class AppModule {}

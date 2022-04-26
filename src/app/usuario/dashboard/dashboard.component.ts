@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
-
+import { AuthService } from './../../templates/auth.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,8 +9,11 @@ import { Chart } from 'chart.js';
 export class DashboardComponent implements OnInit {
   @ViewChild('grafico', { static: true }) elemento: ElementRef;
   chart: Chart;
+  logado: Boolean = true;
 
-  constructor() {}
+  constructor(auth: AuthService) {
+    auth.logado = this.logado;
+  }
   ngOnInit() {
     this.chart = new Chart(this.elemento.nativeElement, {
       type: 'bar',
