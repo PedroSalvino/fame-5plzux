@@ -7,10 +7,10 @@ import { Chart } from 'chart.js';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  constructor() {}
   @ViewChild('grafico', { static: true }) elemento: ElementRef;
-
   chart: Chart;
+
+  constructor() {}
   ngOnInit() {
     this.chart = new Chart(this.elemento.nativeElement, {
       type: 'bar',
@@ -72,8 +72,30 @@ export class DashboardComponent implements OnInit {
   }
 
   fluxoAtual() {
-    this.chart.destroy;
+    let dados = [
+      120, 190, 30, 50, 20, 336, 250, 98, 50, 67, 65, 80, 95, 150, 100, 45, 240,
+      79, 45, 68, 32, 45, 78, 21,
+    ];
+    this.chart.data.datasets.forEach((dataset) => {
+      dataset.data.pop();
+    });
+    this.chart.data.datasets.forEach((dataset) => {
+      dataset.data = dados;
+    });
+    this.chart.update();
   }
 
-  fluxoAntigo() {}
+  fluxoAntigo() {
+    let dados = [
+      450, 190, 300, 54, 29, 36, 200, 941, 58, 670, 650, 800, 950, 150, 160,
+      450, 240, 79, 45, 68, 32, 45, 78, 21,
+    ];
+    this.chart.data.datasets.forEach((dataset) => {
+      dataset.data.pop();
+    });
+    this.chart.data.datasets.forEach((dataset) => {
+      dataset.data = dados;
+    });
+    this.chart.update();
+  }
 }
