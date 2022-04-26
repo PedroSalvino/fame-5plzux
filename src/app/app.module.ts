@@ -14,8 +14,6 @@ import { ParalisacaoComponent } from './usuario/paralisacao/paralisacao.componen
 import { RouterModule } from '@angular/router';
 import { ContatoComponent } from './contato/contato.component';
 import { UsuariosComponent } from './admin/usuarios/usuarios.component';
-import { ConfirmaCadastroComponent } from './confirma-cadastro/confirma-cadastro.component';
-import { ConfirmaLogoutComponent } from './templates/confirma-logout/confirma-logout.component';
 
 @NgModule({
   imports: [
@@ -43,8 +41,6 @@ import { ConfirmaLogoutComponent } from './templates/confirma-logout/confirma-lo
     PerfilComponent,
     ParalisacaoComponent,
     UsuariosComponent,
-    ConfirmaCadastroComponent,
-    ConfirmaLogoutComponent,
   ],
   bootstrap: [AppComponent],
 })
