@@ -6,11 +6,7 @@ import { AuthService } from './../auth.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  logado: Boolean = true;
-
-  constructor(auth: AuthService) {
-    auth.logado = this.logado;
-  }
+  constructor(public auth: AuthService) {}
 
   ngOnInit() {}
 }

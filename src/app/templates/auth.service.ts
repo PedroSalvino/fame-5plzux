@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
-  constructor() {}
+  logado: boolean = false;
 
-  logado: Boolean;
+  constructor() {}
 
   logar() {
     this.logado = true;
@@ -12,5 +12,9 @@ export class AuthService {
 
   logout() {
     this.logado = false;
+  }
+
+  getLogado() {
+    return this.logado;
   }
 }
