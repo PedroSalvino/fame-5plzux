@@ -1,6 +1,6 @@
 <div class="container-fluid bg-escuro">
   <div class="row py-5 bg-cinza-fade" id="controles">
-    <div class="col-md-8 mx-auto py-3">
+    <div class="col-md-8 mx-auto py-2">
       <div class="row">
         <div class="col">
           <button
@@ -15,7 +15,7 @@
             class="btn bg-roxo text-light btn-block"
             (click)="fluxoAntigo()"
           >
-            <span><i class="fas fa-history"></i></span> Ver Fluxos Antigos
+            <span><i class="fas fa-history"></i></span> Ver Fluxo Antigo
           </button>
         </div>
         <div class="col">
@@ -29,12 +29,13 @@
       </div>
     </div>
   </div>
-  <div class="row py-5 bg-cinza-fade">
+  <div class="row py-2 bg-cinza-fade">
     <div class="col-md-10 mx-auto">
-      <canvas #grafico width="400"></canvas>
-      <div class="alert bg-escuro my-3 text-light">
-        <span><i class="fas fa-info-circle text-ciano"></i></span> Legenda |
+      <div class="alert bg-escuro my-1 text-light">
+        <span><i class="fas fa-info-circle text-ciano"></i></span> Última
+        atualização: {{ dataAtualizacao }}
       </div>
+      <canvas #grafico width="400"></canvas>
     </div>
   </div>
 </div>

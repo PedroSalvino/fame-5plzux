@@ -1,3 +1,4 @@
+import { getLocaleDateTimeFormat } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 
@@ -9,6 +10,7 @@ import { Chart } from 'chart.js';
 export class DashboardComponent implements OnInit {
   @ViewChild('grafico', { static: true }) elemento: ElementRef;
   chart: Chart;
+  dataAtualizacao: string;
 
   constructor() {}
 
@@ -84,6 +86,8 @@ export class DashboardComponent implements OnInit {
       dataset.data = dados;
     });
     this.chart.update();
+
+    this.dataAtualizacao = 'Há 1h';
   }
 
   fluxoAntigo() {
@@ -98,5 +102,11 @@ export class DashboardComponent implements OnInit {
       dataset.data = dados;
     });
     this.chart.update();
+
+    let now = new Date();
+    let yesterday = new Date();
+    yesterday.setDate(now.getDate() - 1);
+
+    this.dataAtualizacao = yesterday.toLocaleDateString();
   }
 }
