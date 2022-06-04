@@ -18,6 +18,9 @@ import { AuthService } from './templates/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { TerminalService } from './terminal.service';
 import { GlobalService } from './global.service';
+import { UsuarioService } from './usuario.service';
+import { ParalisacaoService } from './paralisacao.service';
+import { CargoService } from './cargo.service';
 
 @NgModule({
   imports: [
@@ -48,6 +51,13 @@ import { GlobalService } from './global.service';
     UsuariosComponent,
   ],
   bootstrap: [AppComponent],
-  providers: [AuthService, TerminalService, GlobalService],
+  providers: [
+    AuthService,
+    TerminalService,
+    GlobalService,
+    UsuarioService,
+    ParalisacaoService,
+    CargoService,
+  ],
 })
 export class AppModule {}
