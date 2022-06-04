@@ -24,13 +24,12 @@ export interface Paralisacao {
   data: string;
   descricao: string;
   qtdVeiculos: number;
-  tipoParalisacao: TipoParalisacao;
 }
 
-export interface TipoParalisacao {
-  id: number;
-  tipoParalisacao: string;
-}
+// export interface TipoParalisacao {
+//   id: number;
+//   tipoParalisacao: string;
+// }
 
 // GETS
 export interface TerminalApiResponse {
@@ -49,9 +48,9 @@ export interface ParalisacaoApiResponse {
   content: Paralisacao[];
 }
 
-export interface TipoParalisacaoApiResponse {
-  content: TipoParalisacao[];
-}
+// export interface TipoParalisacaoApiResponse {
+//   content: TipoParalisacao[];
+// }
 
 // POSTS
 export interface PostUsuario {
@@ -59,8 +58,15 @@ export interface PostUsuario {
   nome: string;
   email: string;
   senha: string;
-  terminal: Terminal;
-  cargo: Cargo;
+  terminal: {
+    id: number;
+    nome: string;
+    cnpj: string;
+  };
+  cargo: {
+    id: number;
+    cargo: string;
+  };
 }
 
 export interface PostParalisacao {
@@ -70,17 +76,21 @@ export interface PostParalisacao {
   data: string;
   descricao: string;
   qtdVeiculos: number;
-  tipoParalisacao?: {
-    tipoParalisacao: string;
-  };
 }
 
+//PUT
 export interface PutUsuario {
   id: number;
   nome?: string;
   email?: string;
   senha?: string;
+  terminal?: {
+    id: number;
+    nome: string;
+    cnpj: string;
+  };
   cargo?: {
+    id: number;
     cargo: string;
   };
 }
@@ -92,7 +102,4 @@ export interface PutParalisacao {
   data?: string;
   descricao?: string;
   qtdVeiculos?: number;
-  tipoParalisacao?: {
-    tipoParalisacao: string;
-  };
 }
