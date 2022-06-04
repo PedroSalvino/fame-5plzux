@@ -61,8 +61,9 @@
             class="form-control"
             name="empresauser"
             id="empresauser"
-            *ngFor="let terminal of getTerminais(); index as i"
+            *ngFor="let terminal of terminal.terminais; index as i"
           >
+            <option value="0" selected disabled>Selecione o Terminal</option>
             <option value="{{ terminal.id }}">{{ terminal.nome }}</option>
           </select>
         </div>

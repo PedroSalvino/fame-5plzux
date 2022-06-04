@@ -16,10 +16,6 @@ export class CadastroComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
-  }
-
-  getTerminais() {
     this.terminal.getTerminais();
   }
 
