@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { ContatoComponent } from './contato/contato.component';
 import { UsuariosComponent } from './admin/usuarios/usuarios.component';
 import { AuthService } from './templates/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { AuthService } from './templates/auth.service';
       { path: 'paralisacao', component: ParalisacaoComponent },
       { path: 'usuarios', component: UsuariosComponent },
     ]),
+    HttpClientModule,
   ],
   declarations: [
     AppComponent,
