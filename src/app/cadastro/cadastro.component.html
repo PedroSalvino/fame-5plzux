@@ -37,34 +37,20 @@
           />
         </div>
         <!-- Empresa -->
-        <!-- <div class="input-group my-5">
-          <div class="input-group-prepend">
-            <label class="input-group-text text-escuro" for="empresauser"
-              ><i class="fas fa-building"></i
-            ></label>
-          </div>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Empresa"
-            aria-label="Empresa"
-            id="empresauser"
-          />
-        </div> -->
         <div class="input-group my-5">
           <div class="input-group-prepend">
             <label class="input-group-text text-escuro" for="empresauser"
               ><i class="fas fa-building"></i
             ></label>
           </div>
-          <select
-            class="form-control"
-            name="empresauser"
-            id="empresauser"
-            *ngFor="let terminal of terminal.terminais; index as i"
-          >
+          <select class="form-control" name="empresauser" id="empresauser">
             <option value="0" selected disabled>Selecione o Terminal</option>
-            <option value="{{ terminal.id }}">{{ terminal.nome }}</option>
+            <option
+              *ngFor="let terminal of terminal.terminais"
+              value="{{ terminal.id }}"
+            >
+              {{ terminal.nome }}
+            </option>
           </select>
         </div>
         <!-- Cargo -->
@@ -74,12 +60,28 @@
               ><i class="fas fa-suitcase"></i
             ></label>
           </div>
+          <select class="form-control" name="cargouser" id="cargouser">
+            <option value="0" selected disabled>Selecione o Cargo</option>
+            <option
+              *ngFor="let cargo of cargo.cargos; index as i"
+              value="{{ cargo.id }}"
+            >
+              {{ cargo.cargo }}
+            </option>
+          </select>
+        </div>
+        <!-- Senha -->
+        <div class="input-group my-5">
+          <div class="input-group-prepend">
+            <label class="input-group-text text-escuro" for="senhauser"
+              ><i class="fas fa-lock"></i
+            ></label>
+          </div>
           <input
-            type="text"
+            type="password"
             class="form-control"
-            placeholder="Cargo"
-            aria-label="Cargo"
-            id="cargouser"
+            aria-label="Senha"
+            id="senhauser"
           />
         </div>
         <!-- button -->

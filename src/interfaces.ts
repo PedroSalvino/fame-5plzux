@@ -59,9 +59,8 @@ export interface PostUsuario {
   nome: string;
   email: string;
   senha: string;
-  cargo: {
-    cargo: string;
-  };
+  terminal: Terminal;
+  cargo: Cargo;
 }
 
 export interface PostParalisacao {
