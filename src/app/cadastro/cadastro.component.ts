@@ -11,12 +11,16 @@ import { AuthService } from './../templates/auth.service';
 export class CadastroComponent implements OnInit {
   constructor(
     public auth: AuthService,
-    public terminalService: TerminalService,
+    public terminal: TerminalService,
     public globalService: GlobalService
   ) {}
 
   ngOnInit(): void {
-    this.terminalService.getTerminais();
+
+  }
+
+  getTerminais() {
+    this.terminal.getTerminais();
   }
 
   logar() {
