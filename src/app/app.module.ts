@@ -16,6 +16,8 @@ import { ContatoComponent } from './contato/contato.component';
 import { UsuariosComponent } from './admin/usuarios/usuarios.component';
 import { AuthService } from './templates/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TerminalService } from './terminal.service';
+import { GlobalService } from './global.service';
 
 @NgModule({
   imports: [
@@ -46,6 +48,6 @@ import { HttpClientModule } from '@angular/common/http';
     UsuariosComponent,
   ],
   bootstrap: [AppComponent],
-  providers: [AuthService],
+  providers: [AuthService, TerminalService, GlobalService],
 })
 export class AppModule {}

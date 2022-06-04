@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class GlobalService {
-  api = 'https://fame-api.herokuapp.com/';
+  api = 'https://fame-api.herokuapp.com';
 
   constructor(private http: HttpClient) {}
 }
