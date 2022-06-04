@@ -54,4 +54,34 @@ export interface TipoParalisacaoApiResponse {
 }
 
 // POSTS
-export interface;
+export interface PostUsuario {
+  id?: number;
+  nome: string;
+  email: string;
+  senha: string;
+  cargo: {
+    cargo: string;
+  };
+}
+
+export interface PostParalisacao {
+  id?: number;
+  inicio: string;
+  termino: string;
+  data: string;
+  descricao: string;
+  qtdVeiculos: number;
+  tipoParalisacao?: {
+    tipoParalisacao: string;
+  };
+}
+
+export interface PutUsuario {
+  id: number;
+  nome?: string;
+  email?: string;
+  senha?: string;
+  cargo?: {
+    cargo: string;
+  };
+}
