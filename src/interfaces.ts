@@ -85,3 +85,15 @@ export interface PutUsuario {
     cargo: string;
   };
 }
+
+export interface PutParalisacao {
+  id: number;
+  inicio?: string;
+  termino?: string;
+  data?: string;
+  descricao?: string;
+  qtdVeiculos?: number;
+  tipoParalisacao?: {
+    tipoParalisacao: string;
+  };
+}
