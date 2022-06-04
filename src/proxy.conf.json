@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "'https://fame-api.herokuapp.com",
+    "secure": false
+  }
+}
