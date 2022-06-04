@@ -7,7 +7,6 @@ import { GlobalService } from './global.service';
 export class TerminalService {
   terminais: Terminal[] = [];
   terminalPicked: Terminal = {} as Terminal;
-  query: '';
 
   constructor(private http: HttpClient, public global: GlobalService) {}
 
