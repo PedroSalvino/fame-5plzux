@@ -47,7 +47,6 @@
           </div>
           <select
             class="form-control"
-            name="empresauser"
             id="empresauser"
             [(ngModel)]="this.empresauser"
             (change)="getTerminal()"
@@ -73,12 +72,10 @@
             name="cargouser"
             id="cargouser"
             [(ngModel)]="this.cargouser"
+            (change)="getCargo()"
           >
             <option value="0" selected disabled>Selecione o Cargo</option>
-            <option
-              *ngFor="let cargo of cargo.cargos; index as i"
-              value="{{ cargo.id }}"
-            >
+            <option *ngFor="let cargo of cargo.cargos" value="{{ cargo.id }}">
               {{ cargo.cargo }}
             </option>
           </select>

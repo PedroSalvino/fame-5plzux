@@ -2,6 +2,8 @@ export interface Terminal {
   id: number;
   nome: string;
   cnpj: string;
+  ativo: boolean;
+  tipoCarga: string[];
 }
 
 export interface Usuario {
