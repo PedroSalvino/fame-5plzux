@@ -103,7 +103,7 @@
           <div class="input-group my-5">
             <div class="input-group-prepend">
               <label class="input-group-text text-roxo" for="descparalisacao"
-                >Descrição</label
+                >Motivo</label
               >
             </div>
             <textarea
@@ -131,13 +131,13 @@
         <!-- Consulta -->
         <div class="area-form col mx-auto mt-3">
           <div class="mb-3 text-center">
-            <button class="btn bg-roxo text-claro btn-block">
-              <span><i class="fas fa-plus-circle"></i></span> Adicionar
-              Paralisação
-            </button>
+            <h2 class="h4 text-ciano">Paralisações Informadas</h2>
           </div>
 
-          <div class="card bg-cinza-fade">
+          <div
+            class="card bg-cinza-fade"
+            *ngFor="let paralisa of paralisacao.paralisacoes"
+          >
             <div class="card-header text-center">
               <span><i class="fas fa-exclamation-circle text-ciano"></i></span>
             </div>
@@ -146,69 +146,19 @@
                 <span class="text-ciano"
                   ><i class="fas fa-calendar"></i> Data</span
                 >
-                25/03/2022
+                {{ paralisa.data.replace('T00:00:00.000+00:00', '') }}
               </p>
               <p class="text-claro">
                 <span class="text-ciano"
                   ><i class="fas fa-clock"></i> Duração</span
                 >
-                09:15 ~ 15:30
+                {{ paralisa.inicio }} às {{ paralisa.termino }}
               </p>
               <p class="text-claro">
                 <span class="text-ciano"
                   ><i class="fas fa-tag"></i> Motivo</span
                 >
-                Acidente na Pista
-              </p>
-            </div>
-          </div>
-          <div class="card bg-cinza-fade my-1">
-            <div class="card-header text-center">
-              <span><i class="fas fa-exclamation-circle text-ciano"></i></span>
-            </div>
-            <div class="card-body">
-              <p class="text-claro">
-                <span class="text-ciano"
-                  ><i class="fas fa-calendar"></i> Data</span
-                >
-                25/03/2022
-              </p>
-              <p class="text-claro">
-                <span class="text-ciano"
-                  ><i class="fas fa-clock"></i> Duração</span
-                >
-                09:15 ~ 15:30
-              </p>
-              <p class="text-claro">
-                <span class="text-ciano"
-                  ><i class="fas fa-tag"></i> Motivo</span
-                >
-                Acidente na Pista
-              </p>
-            </div>
-          </div>
-          <div class="card bg-cinza-fade">
-            <div class="card-header text-center">
-              <span><i class="fas fa-exclamation-circle text-ciano"></i></span>
-            </div>
-            <div class="card-body">
-              <p class="text-claro">
-                <span class="text-ciano"
-                  ><i class="fas fa-calendar"></i> Data</span
-                >
-                25/03/2022
-              </p>
-              <p class="text-claro">
-                <span class="text-ciano"
-                  ><i class="fas fa-clock"></i> Duração</span
-                >
-                09:15 ~ 15:30
-              </p>
-              <p class="text-claro">
-                <span class="text-ciano"
-                  ><i class="fas fa-tag"></i> Motivo</span
-                >
-                Acidente na Pista
+                {{ paralisa.descricao }}
               </p>
             </div>
           </div>
