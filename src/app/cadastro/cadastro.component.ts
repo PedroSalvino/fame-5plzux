@@ -41,18 +41,11 @@ export class CadastroComponent implements OnInit {
   getTerminal() {
     let index = parseInt(this.empresauser);
     this.terminal.getTerminal(index);
-
-    console.log(this.terminal.terminalPicked.id);
-    console.log(this.terminal.terminalPicked.nome);
-    console.log(this.terminal.terminalPicked.cnpj);
   }
 
   getCargo() {
     let index = parseInt(this.cargouser);
     this.cargo.getCargo(index);
-
-    console.log(this.cargo.cargoPicked.id);
-    console.log(this.cargo.cargoPicked.cargo);
   }
 
   cadastrarUsuario() {
@@ -60,16 +53,18 @@ export class CadastroComponent implements OnInit {
       nome: this.nomeuser,
       email: this.emailuser,
       senha: this.senhauser,
-      terminal: {
+      ativo: true,
+      terminal: [{
         id: this.terminal.terminalPicked.id,
         nome: this.terminal.terminalPicked.nome,
         cnpj: this.terminal.terminalPicked.cnpj,
-      },
+      }],
       cargo: {
         id: this.cargo.cargoPicked.id,
         cargo: this.cargo.cargoPicked.cargo,
       },
     };
     console.log(this.usuarioPost);
+    this.usuario.postUsuario(this.usuarioPost);
   }
 }
