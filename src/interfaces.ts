@@ -81,6 +81,8 @@ export interface PostParalisacao {
   data: string;
   descricao: string;
   qtdVeiculos: number;
+  ativo: boolean;
+  categoria?: string;
 }
 
 //PUT

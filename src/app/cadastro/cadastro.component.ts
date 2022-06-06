@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostUsuario, PutUsuario } from '../../interfaces';
+import { PostUsuario } from '../../interfaces';
 import { CargoService } from '../cargo.service';
 import { GlobalService } from '../global.service';
 import { TerminalService } from '../terminal.service';
@@ -54,11 +54,13 @@ export class CadastroComponent implements OnInit {
       email: this.emailuser,
       senha: this.senhauser,
       ativo: true,
-      terminal: [{
-        id: this.terminal.terminalPicked.id,
-        nome: this.terminal.terminalPicked.nome,
-        cnpj: this.terminal.terminalPicked.cnpj,
-      }],
+      terminal: [
+        {
+          id: this.terminal.terminalPicked.id,
+          nome: this.terminal.terminalPicked.nome,
+          cnpj: this.terminal.terminalPicked.cnpj,
+        },
+      ],
       cargo: {
         id: this.cargo.cargoPicked.id,
         cargo: this.cargo.cargoPicked.cargo,

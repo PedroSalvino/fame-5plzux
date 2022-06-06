@@ -31,12 +31,13 @@
               class="form-control"
               aria-label="Data Paralisacao"
               id="dataparalisacao"
+              [(ngModel)]="this.data"
             />
-            <div class="input-group-prepend">
+            <!-- <div class="input-group-prepend">
               <button class="btn bg-cinza text-ciano">
                 <i class="fas fa-edit"></i>
               </button>
-            </div>
+            </div> -->
           </div>
           <div class="input-group my-5">
             <div class="input-group-prepend">
@@ -49,12 +50,14 @@
               class="form-control"
               aria-label="Hora Inicio"
               id="horainicio"
+              [(ngModel)]="this.inicio"
+              step="2"
             />
-            <div class="input-group-prepend">
+            <!-- <div class="input-group-prepend">
               <button class="btn bg-cinza text-ciano">
                 <i class="fas fa-edit"></i>
               </button>
-            </div>
+            </div> -->
           </div>
           <div class="input-group my-5">
             <div class="input-group-prepend">
@@ -67,30 +70,35 @@
               class="form-control"
               aria-label="Hora Término"
               id="horatermino"
+              [(ngModel)]="this.termino"
+              step="2"
             />
-            <div class="input-group-prepend">
+            <!-- <div class="input-group-prepend">
               <button class="btn bg-cinza text-ciano">
                 <i class="fas fa-edit"></i>
               </button>
-            </div>
+            </div> -->
           </div>
           <div class="input-group my-5">
             <div class="input-group-prepend">
-              <label class="input-group-text text-roxo" for="motivoparalisacao"
-                >Motivo</label
+              <label
+                class="input-group-text text-roxo"
+                for="veiculosparalisacao"
+                >Quantidade de Veículos</label
               >
             </div>
             <input
-              type="text"
+              type="number"
               class="form-control"
               aria-label="Motivo"
-              id="motivoparalisacao"
+              id="veiculosparalisacao"
+              [(ngModel)]="this.veiculos"
             />
-            <div class="input-group-prepend">
+            <!-- <div class="input-group-prepend">
               <button class="btn bg-cinza text-ciano">
                 <i class="fas fa-edit"></i>
               </button>
-            </div>
+            </div> -->
           </div>
           <div class="input-group my-5">
             <div class="input-group-prepend">
@@ -102,17 +110,19 @@
               class="form-control"
               id="descparalisacao"
               rows="5"
+              [(ngModel)]="this.descricao"
             ></textarea>
-            <div class="input-group-prepend">
+            <!-- <div class="input-group-prepend">
               <button class="btn bg-cinza text-ciano">
                 <i class="fas fa-edit"></i>
               </button>
-            </div>
+            </div> -->
           </div>
           <div>
             <button
               type="button"
               class="btn bg-ciano btn-block col-md-8 mx-auto"
+              (click)="cadastrarParalisacao()"
             >
               Salvar Alterações
             </button>
