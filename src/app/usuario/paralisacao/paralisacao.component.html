@@ -122,7 +122,8 @@
             <button
               type="button"
               class="btn bg-ciano btn-block col-md-8 mx-auto"
-              (click)="cadastrarParalisacao()"
+              data-toggle="modal"
+              data-target="#confParalisa"
             >
               Salvar Alterações
             </button>
@@ -163,6 +164,51 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="confParalisa"
+  tabindex="-1"
+  aria-labelledby="confParalisaLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-escuro">
+        <p class="modal-title mx-auto text-claro" id="confParalisaLabel">
+          <span class="mr-1"><i class="fas fa-exclamation-circle"></i></span>
+          Confirmação de Paralisação
+        </p>
+      </div>
+      <div class="modal-body">
+        <p class="text-center text-escuro my-auto h5">
+          Deseja incluir a paralisação?
+        </p>
+        <p class="text-escuro text-center my-2">
+          Ao clicar em <strong>CONFIRMAR</strong> os dados cadastrados não
+          poderão ser alterados
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn bg-cinza text-claro"
+          data-dismiss="modal"
+        >
+          Fechar
+        </button>
+        <button
+          type="button"
+          class="btn bg-roxo text-claro"
+          data-dismiss="modal"
+          (click)="cadastrarParalisacao()"
+        >
+          Confirmar
+        </button>
       </div>
     </div>
   </div>
