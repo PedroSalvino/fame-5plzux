@@ -84,10 +84,59 @@
         </div>
         <!-- button -->
         <div>
-          <button type="button" class="btn bg-ciano btn-block col-md-8 mx-auto">
+          <button
+            type="button"
+            class="btn bg-ciano btn-block col-md-8 mx-auto"
+            data-toggle="modal"
+            data-target="#confContato"
+          >
             <span><i class="fas fa-paper-plane"></i></span> Enviar Mensagem
           </button>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="confContato"
+  tabindex="-1"
+  aria-labelledby="confContatoLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-escuro">
+        <p class="modal-title mx-auto text-claro" id="confContatoLabel">
+          <span class="mr-1"><i class="fas fa-exclamation-circle"></i></span>
+          Envio de Contato
+        </p>
+      </div>
+      <div class="modal-body">
+        <p class="text-center text-escuro my-auto h5">
+          Deseja enviar a mensagem?
+        </p>
+        <p class="text-escuro text-center my-2">
+          Ao clicar em <strong>CONFIRMAR</strong> a sua mensagem será enviada à
+          equipe do FAME
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn bg-cinza text-claro"
+          data-dismiss="modal"
+        >
+          Fechar
+        </button>
+        <button
+          type="button"
+          class="btn bg-roxo text-claro"
+          data-dismiss="modal"
+        >
+          Confirmar
+        </button>
       </div>
     </div>
   </div>
