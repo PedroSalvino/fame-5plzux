@@ -15,7 +15,7 @@ export interface Terminal {
 export interface Usuario {
   id: number;
   nome: string;
-  email: string;
+  login: string;
   senha: string;
   cargo: Cargo;
 }
@@ -64,7 +64,7 @@ export interface ParalisacaoApiResponse {
 export interface PostUsuario {
   id?: number;
   nome: string;
-  email: string;
+  login: string;
   senha: string;
   ativo: boolean;
   terminal: [
@@ -95,7 +95,7 @@ export interface PostParalisacao {
 export interface PutUsuario {
   id: number;
   nome?: string;
-  email?: string;
+  login?: string;
   senha?: string;
   terminal?: {
     id: number;

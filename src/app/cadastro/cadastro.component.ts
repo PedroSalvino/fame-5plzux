@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PostUsuario } from '../../interfaces';
 import { CargoService } from '../cargo.service';
 import { GlobalService } from '../global.service';
@@ -17,12 +18,14 @@ export class CadastroComponent implements OnInit {
     public terminal: TerminalService,
     public globalService: GlobalService,
     public cargo: CargoService,
-    public usuario: UsuarioService
+    public usuario: UsuarioService,
+    public router: Router
   ) {}
 
   ngOnInit(): void {
     this.terminal.getTerminais();
     this.cargo.getCargos();
+    this.usuario.getUsuario(55);
   }
 
   usuarioPost: PostUsuario = {} as PostUsuario;
@@ -33,6 +36,9 @@ export class CadastroComponent implements OnInit {
   senhauser: '';
   empresauser: '';
   cargouser: '';
+
+  loginuser: '';
+  passuser: '';
 
   logar() {
     this.auth.logar();
@@ -51,7 +57,7 @@ export class CadastroComponent implements OnInit {
   cadastrarUsuario() {
     this.usuarioPost = {
       nome: this.nomeuser,
-      email: this.emailuser,
+      login: this.emailuser,
       senha: this.senhauser,
       ativo: true,
       terminal: [
@@ -68,5 +74,14 @@ export class CadastroComponent implements OnInit {
     };
     console.log(this.usuarioPost);
     this.usuario.postUsuario(this.usuarioPost);
+  }
+
+  loginUsuario() {
+    if (
+      this.loginuser == this.usuario.usuarioPicked.login &&
+      this.passuser == this.usuario.usuarioPicked.senha
+    ) {
+      this.router.navigate(['/dashboard']);
+    }
   }
 }
