@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PutUsuario } from '../../../interfaces';
+import { PutUsuario, Usuario } from '../../../interfaces';
 import { CargoService } from '../../cargo.service';
 import { GlobalService } from '../../global.service';
-import { ParalisacaoService } from '../../paralisacao.service';
 import { TerminalService } from '../../terminal.service';
 import { UsuarioService } from '../../usuario.service';
 
@@ -12,18 +11,22 @@ import { UsuarioService } from '../../usuario.service';
   styleUrls: ['./perfil.component.css'],
 })
 export class PerfilComponent implements OnInit {
+  usuarioPicked: Usuario | null = null;
+  usuarioPut: PutUsuario = {} as PutUsuario;
+
   constructor(
     public global: GlobalService,
     public usuario: UsuarioService,
     public cargoService: CargoService,
     public terminal: TerminalService
-  ) {}
-
-  ngOnInit(): void {
-    this.usuario.getUsuario(55);
+  ) {
+    this.usuarioPicked = JSON.parse(
+      localStorage.getItem('usuarioPicked') || '{}'
+    );
+    console.log(this.usuarioPicked);
   }
 
-  usuarioPut: PutUsuario = {} as PutUsuario;
+  ngOnInit() {}
 
   id: '';
   nome = '';

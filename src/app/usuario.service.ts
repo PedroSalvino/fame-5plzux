@@ -47,7 +47,7 @@ export class UsuarioService {
   }
 
   logoff() {
-    this.usuarioPicked = null;
+    localStorage.setItem('isLogin', JSON.stringify('{}'));
     this.isLogin = false;
     localStorage.removeItem('usuarioPicked');
   }

@@ -18,7 +18,7 @@
             placeholder="Nome Completo"
             aria-label="Nome Completo"
             id="nomeperfil"
-            value="{{ this.usuario.usuarioPicked.nome }}"
+            value="{{ this.usuarioPicked.nome }}"
             [(ngModel)]="this.nome"
           />
         </div>
@@ -34,7 +34,7 @@
             placeholder="usuario@comercial.com.br"
             aria-label="E-mail Corporativo"
             id="emailperfil"
-            value="{{ this.usuario.usuarioPicked.login }}"
+            value="{{ this.usuarioPicked.login }}"
             [(ngModel)]="this.email"
           />
         </div>
@@ -67,7 +67,7 @@
             aria-label="Empresa"
             id="empresaperfil"
             [(ngModel)]="this.empresa"
-            value="{{ this.usuario.usuarioPicked.terminal[0].nome }}"
+            value="{{ this.usuarioPicked.terminal[0].nome }}"
             readonly
           />
         </div>
@@ -86,7 +86,7 @@
             aria-label="Cargo"
             id="cargoperfil"
             [(ngModel)]="this.cargo"
-            value="{{ this.usuario.usuarioPicked.cargo.cargo }}"
+            value="{{ this.usuarioPicked.cargo.cargo }}"
             readonly
           />
         </div>
