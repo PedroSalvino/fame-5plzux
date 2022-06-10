@@ -5,7 +5,6 @@ import { CargoService } from '../cargo.service';
 import { GlobalService } from '../global.service';
 import { TerminalService } from '../terminal.service';
 import { UsuarioService } from '../usuario.service';
-import { AuthService } from './../templates/auth.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,7 +13,6 @@ import { AuthService } from './../templates/auth.service';
 })
 export class CadastroComponent implements OnInit {
   constructor(
-    public auth: AuthService,
     public terminal: TerminalService,
     public globalService: GlobalService,
     public cargo: CargoService,
@@ -25,7 +23,6 @@ export class CadastroComponent implements OnInit {
   ngOnInit(): void {
     this.terminal.getTerminais();
     this.cargo.getCargos();
-    this.usuario.getUsuario(55);
   }
 
   usuarioPost: PostUsuario = {} as PostUsuario;
@@ -39,10 +36,6 @@ export class CadastroComponent implements OnInit {
 
   loginuser: '';
   passuser: '';
-
-  logar() {
-    this.auth.logar();
-  }
 
   getTerminal() {
     let index = parseInt(this.empresauser);
@@ -72,18 +65,14 @@ export class CadastroComponent implements OnInit {
         cargo: this.cargo.cargoPicked.cargo,
       },
     };
-    console.log(this.usuarioPost);
+
     this.usuario.postUsuario(this.usuarioPost);
   }
 
   loginUsuario() {
     console.log(this.usuario.usuarioPicked);
-    if (
-      this.loginuser == this.usuario.usuarioPicked.login &&
-      this.passuser == this.usuario.usuarioPicked.senha
-    ) {
-      this.usuario.logar();
-      this.router.navigate(['/dashboard']);
+    if (this.loginuser != '' && this.passuser != '') {
+      this.usuario.login(this.loginuser, this.passuser);
     }
   }
 }

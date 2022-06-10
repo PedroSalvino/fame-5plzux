@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   PostUsuario,
   PutUsuario,
@@ -13,8 +14,13 @@ export class UsuarioService {
   usuarios: Usuario[] = [];
   usuarioPicked: Usuario | null = null;
   isAdmin = false;
+  isLogin = false;
 
-  constructor(private http: HttpClient, public global: GlobalService) {}
+  constructor(
+    private http: HttpClient,
+    public global: GlobalService,
+    public router: Router
+  ) {}
 
   login(userLogin: string, userSenha: string) {
     this.http
@@ -27,22 +33,39 @@ export class UsuarioService {
           'usuarioPicked',
           JSON.stringify(this.usuarioPicked)
         );
-        if (this.usuarioPicked) this.checkForAdmin();
+        if (this.usuarioPicked) {
+          this.checkForAdmin();
+          this.logar();
+        }
       });
+  }
+
+  logar() {
+    this.isLogin = true;
+    localStorage.setItem('isLogin', JSON.stringify(this.isLogin));
+    this.router.navigate(['/dashboard']);
   }
 
   logoff() {
     this.usuarioPicked = null;
+    this.isLogin = false;
     localStorage.removeItem('usuarioPicked');
   }
 
   checkLocalStorageLogin() {
-    if (localStorage.getItem('auth'))
+    if (localStorage.getItem('usuarioPicked'))
       this.usuarioPicked = JSON.parse(
         localStorage.getItem('usuarioPicked') || '{}'
       );
 
     if (this.usuarioPicked) this.checkForAdmin();
+  }
+
+  isLogado() {
+    if (localStorage.getItem('isLogin'))
+      this.isLogin = JSON.parse(localStorage.getItem('isLogin') || '');
+
+    return this.isLogin;
   }
 
   checkForAdmin() {

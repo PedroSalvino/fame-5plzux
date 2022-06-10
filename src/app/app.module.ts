@@ -14,7 +14,6 @@ import { ParalisacaoComponent } from './usuario/paralisacao/paralisacao.componen
 import { RouterModule } from '@angular/router';
 import { ContatoComponent } from './contato/contato.component';
 import { UsuariosComponent } from './admin/usuarios/usuarios.component';
-import { AuthService } from './templates/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { TerminalService } from './terminal.service';
 import { GlobalService } from './global.service';
@@ -52,7 +51,6 @@ import { CargoService } from './cargo.service';
   ],
   bootstrap: [AppComponent],
   providers: [
-    AuthService,
     TerminalService,
     GlobalService,
     UsuarioService,
