@@ -17,6 +17,22 @@ export class UsuarioService {
 
   constructor(private http: HttpClient, public global: GlobalService) {}
 
+  login(userLogin: string, userSenha: string) {
+    this.http
+      .get<Usuario>(
+        `${this.global.api}/usuario/login/${userLogin}/${userSenha}`
+      )
+      .subscribe((data) => {
+        this.usuarioPicked = data;
+        localStorage.setItem('auth', JSON.stringify(this.usuarioPicked));
+        this.logado = true;
+      });
+  }
+
+  logoff() {
+    this.logado = false;
+  }
+
   getUsuario(id: number) {
     this.http
       .get<Usuario>(`${this.global.api}/usuario/${id}`)
@@ -51,13 +67,5 @@ export class UsuarioService {
 
   deleteUsuario(id: number) {
     this.http.delete<any>(`${this.global.api}/usuario/${id}`);
-  }
-
-  logar() {
-    this.logado = true;
-  }
-
-  logoff() {
-    this.logado = false;
   }
 }
