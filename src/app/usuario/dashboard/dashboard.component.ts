@@ -1,6 +1,7 @@
 import { getLocaleDateTimeFormat } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
+import { UsuarioService } from './../../../../src/app/usuario.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,7 @@ export class DashboardComponent implements OnInit {
   chart: Chart;
   dataAtualizacao: string;
 
-  constructor() {}
+  constructor(public usuario: UsuarioService) {}
 
   ngOnInit() {
     this.chart = new Chart(this.elemento.nativeElement, {
@@ -72,6 +73,8 @@ export class DashboardComponent implements OnInit {
         ],
       },
     });
+
+    this.usuario.getUsuario(55);
   }
 
   fluxoAtual() {

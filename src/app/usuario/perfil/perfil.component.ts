@@ -15,13 +15,12 @@ export class PerfilComponent implements OnInit {
   constructor(
     public global: GlobalService,
     public usuario: UsuarioService,
-    public cargo: CargoService,
+    public cargoService: CargoService,
     public terminal: TerminalService
   ) {}
 
   ngOnInit(): void {
-    this.cargo.getCargos();
-    this.terminal.getTerminais();
+    this.usuario.getUsuario(55);
   }
 
   usuarioPut: PutUsuario = {} as PutUsuario;
@@ -30,20 +29,20 @@ export class PerfilComponent implements OnInit {
   nome = '';
   email: '';
   senha: '';
-  empresaUser: '';
-  cargoUser: '';
+  empresa: '';
+  cargo: '';
 
   atualizarPerfil() {
     if (
       this.nome !== '' &&
       this.email !== '' &&
-      this.empresaUser !== '' &&
-      this.cargoUser !== ''
+      this.empresa !== '' &&
+      this.cargo !== ''
     ) {
       this.usuarioPut = {
-        id: parseInt(this.id),
+        id: this.usuario.usuarioPicked.id,
         nome: this.nome,
-        email: this.email,
+        login: this.email,
         senha: this.senha,
         terminal: {
           id: this.terminal.terminalPicked.id,
@@ -51,8 +50,8 @@ export class PerfilComponent implements OnInit {
           cnpj: this.terminal.terminalPicked.cnpj,
         },
         cargo: {
-          id: this.cargo.cargoPicked.id,
-          cargo: this.cargo.cargoPicked.cargo,
+          id: this.cargoService.cargoPicked.id,
+          cargo: this.cargoService.cargoPicked.cargo,
         },
       };
 
