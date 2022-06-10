@@ -13,6 +13,8 @@ export class UsuarioService {
   usuarios: Usuario[] = [];
   usuarioPicked: Usuario = {} as Usuario;
 
+  logado = false;
+
   constructor(private http: HttpClient, public global: GlobalService) {}
 
   getUsuario(id: number) {
@@ -49,5 +51,13 @@ export class UsuarioService {
 
   deleteUsuario(id: number) {
     this.http.delete<any>(`${this.global.api}/usuario/${id}`);
+  }
+
+  logar() {
+    this.logado = true;
+  }
+
+  logoff() {
+    this.logado = false;
   }
 }

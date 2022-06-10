@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from './../../../../src/app/global.service';
+import { UsuarioService } from './../../../../src/app/usuario.service';
 import { AuthService } from './../auth.service';
 @Component({
   selector: 'app-navbar',
@@ -6,7 +8,7 @@ import { AuthService } from './../auth.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(public auth: AuthService) {}
+  constructor(public global: GlobalService, public usuario: UsuarioService) {}
 
   ngOnInit() {}
 }

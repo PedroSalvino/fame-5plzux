@@ -77,10 +77,12 @@ export class CadastroComponent implements OnInit {
   }
 
   loginUsuario() {
+    console.log(this.usuario.usuarioPicked);
     if (
       this.loginuser == this.usuario.usuarioPicked.login &&
       this.passuser == this.usuario.usuarioPicked.senha
     ) {
+      this.usuario.logar();
       this.router.navigate(['/dashboard']);
     }
   }
