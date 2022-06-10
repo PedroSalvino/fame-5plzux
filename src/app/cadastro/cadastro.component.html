@@ -95,14 +95,13 @@
             [(ngModel)]="this.senhauser"
           />
         </div>
-        <!-- button -->
-        <!-- data-target="#confCadastro"
-        data-toggle="modal" -->
+
         <div>
           <button
             type="button"
             class="btn bg-roxo text-claro btn-block col-md-8 mx-auto"
-            (click)="cadastrarUsuario()"
+            data-toggle="modal"
+            data-target="#confCadastro"
           >
             Enviar Solicitação
           </button>
@@ -182,13 +181,101 @@
         </p>
 
         <p class="text-center">
-          Nosso time fará uma análise de seu perfil, caso esteja tudo certo,
-          seus dados de acesso serão enviados por
-          <span class="text-roxo">e-mail</span>!
+          Nosso time fará uma análise de seu perfil e seu acesso estará
+          disponível em
+          <span class="text-roxo">breve</span>!
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn bg-ciano" data-dismiss="modal">
+        <button
+          type="button"
+          class="btn bg-cinza text-claro"
+          data-dismiss="modal"
+        >
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn bg-ciano"
+          data-dismiss="modal"
+          (click)="cadastrarUsuario()"
+        >
+          Entendido
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="successModal"
+  tabindex="-1"
+  aria-labelledby="successModalLabel"
+  aria-hidden="true"
+  [ngStyle]="{ display: displayStyleSucesso }"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-ciano">
+        <p class="modal-title mx-auto text-claro" id="successModalLabel">
+          <span><i class="fas fa-exclamation-circle"></i></span>
+          Cadastro Confirmado
+        </p>
+      </div>
+      <div class="modal-body">
+        <p class="text-center h5 text-escuro">
+          Você solicitou acesso à plataforma FAME
+        </p>
+
+        <p class="text-center">
+          Seus dados foram cadastrados corretamente! Entre em sua conta.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn bg-cinza text-claro"
+          data-dismiss="modal"
+        >
+          Entendido
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="successModal"
+  tabindex="-1"
+  aria-labelledby="successModalLabel"
+  aria-hidden="true"
+  [ngStyle]="{ display: displayStyleErro }"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <p class="modal-title mx-auto text-claro" id="successModalLabel">
+          <span><i class="fas fa-exclamation-circle"></i></span>
+          Cadastro Incorreto
+        </p>
+      </div>
+      <div class="modal-body">
+        <p class="text-center h5 text-escuro">
+          Você solicitou acesso à plataforma FAME
+        </p>
+
+        <p class="text-center">
+          Os dados inseridos estão inválidos! Tente novamente.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn bg-cinza text-claro"
+          data-dismiss="modal"
+        >
           Entendido
         </button>
       </div>

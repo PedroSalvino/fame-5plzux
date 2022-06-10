@@ -37,6 +37,9 @@ export class CadastroComponent implements OnInit {
   loginuser: '';
   passuser: '';
 
+  displayStyleSucesso = 'none';
+  displayStyleErro = 'none';
+
   getTerminal() {
     let index = parseInt(this.empresauser);
     this.terminal.getTerminal(index);
@@ -48,25 +51,40 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrarUsuario() {
-    this.usuarioPost = {
-      nome: this.nomeuser,
-      login: this.emailuser,
-      senha: this.senhauser,
-      ativo: true,
-      terminal: [
-        {
-          id: this.terminal.terminalPicked.id,
-          nome: this.terminal.terminalPicked.nome,
-          cnpj: this.terminal.terminalPicked.cnpj,
+    if (
+      this.nomeuser != '' &&
+      this.emailuser != '' &&
+      this.senhauser != '' &&
+      this.empresauser != '' &&
+      this.cargouser != '' &&
+      this.nomeuser != undefined &&
+      this.emailuser != undefined &&
+      this.senhauser != undefined &&
+      this.empresauser != undefined &&
+      this.cargouser != undefined
+    ) {
+      this.usuarioPost = {
+        nome: this.nomeuser,
+        login: this.emailuser,
+        senha: this.senhauser,
+        ativo: true,
+        terminal: [
+          {
+            id: this.terminal.terminalPicked.id,
+            nome: this.terminal.terminalPicked.nome,
+            cnpj: this.terminal.terminalPicked.cnpj,
+          },
+        ],
+        cargo: {
+          id: this.cargo.cargoPicked.id,
+          cargo: this.cargo.cargoPicked.cargo,
         },
-      ],
-      cargo: {
-        id: this.cargo.cargoPicked.id,
-        cargo: this.cargo.cargoPicked.cargo,
-      },
-    };
+      };
 
-    this.usuario.postUsuario(this.usuarioPost);
+      this.usuario.postUsuario(this.usuarioPost);
+    } else {
+      console.error();
+    }
   }
 
   loginUsuario() {
@@ -74,5 +92,19 @@ export class CadastroComponent implements OnInit {
     if (this.loginuser != '' && this.passuser != '') {
       this.usuario.login(this.loginuser, this.passuser);
     }
+  }
+
+  abrirModalSucesso() {
+    this.displayStyleSucesso = 'block';
+  }
+  fecharModalSucesso() {
+    this.displayStyleSucesso = 'none';
+  }
+
+  abrirModalErro() {
+    this.displayStyleErro = 'block';
+  }
+  fecharModalErro() {
+    this.displayStyleErro = 'none';
   }
 }
