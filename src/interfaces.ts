@@ -1,3 +1,9 @@
+export interface Auth {
+  token: string;
+  username: string;
+  profile: Array<String>;
+}
+
 export interface Terminal {
   id: number;
   nome: string;
