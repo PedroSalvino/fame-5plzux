@@ -11,9 +11,8 @@ import { GlobalService } from './global.service';
 @Injectable()
 export class UsuarioService {
   usuarios: Usuario[] = [];
-  usuarioPicked: Usuario = {} as Usuario;
-
-  logado = false;
+  usuarioPicked: Usuario | null = null;
+  isAdmin = false;
 
   constructor(private http: HttpClient, public global: GlobalService) {}
 
@@ -24,13 +23,33 @@ export class UsuarioService {
       )
       .subscribe((data) => {
         this.usuarioPicked = data;
-        localStorage.setItem('auth', JSON.stringify(this.usuarioPicked));
-        this.logado = true;
+        localStorage.setItem(
+          'usuarioPicked',
+          JSON.stringify(this.usuarioPicked)
+        );
+        if (this.usuarioPicked) this.checkForAdmin();
       });
   }
 
   logoff() {
-    this.logado = false;
+    this.usuarioPicked = null;
+    localStorage.removeItem('usuarioPicked');
+  }
+
+  checkLocalStorageLogin() {
+    if (localStorage.getItem('auth'))
+      this.usuarioPicked = JSON.parse(
+        localStorage.getItem('usuarioPicked') || '{}'
+      );
+
+    if (this.usuarioPicked) this.checkForAdmin();
+  }
+
+  checkForAdmin() {
+    if (this.usuarioPicked)
+      this.isAdmin = this.usuarioPicked.perfis.some(
+        (e: String) => e === 'ADMIN'
+      );
   }
 
   getUsuario(id: number) {

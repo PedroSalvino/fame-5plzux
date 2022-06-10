@@ -17,7 +17,9 @@ export interface Usuario {
   nome: string;
   login: string;
   senha: string;
+  perfis: Array<String>;
   cargo: Cargo;
+  terminal: Terminal[];
 }
 
 export interface Cargo {
