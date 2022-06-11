@@ -13,89 +13,23 @@
           </tr>
         </thead>
         <tbody class="text-center">
-          <tr>
-            <th scope="row">Karoline Teodoro da Silva</th>
-            <td>karoline.silva9@fatec.sp.gov.br</td>
-            <td>Fatec Baixada Santista - Rubens Lara</td>
-            <td>Estudante</td>
-            <td>Inativo</td>
-            <td><button class="btn bg-ciano btn-block">Ativar</button></td>
-          </tr>
-          <tr>
-            <th scope="row">Pedro Luiz Souza Salvino</th>
-            <td>pedro.salvino@fatec.sp.gov.br</td>
-            <td>Fatec Baixada Santista - Rubens Lara</td>
-            <td>Estudante</td>
-            <td>Ativo</td>
+          <tr *ngFor="let user of this.usuarios; index as i">
+            <th scope="row">{{ user.nome }}</th>
+            <td>{{ user.login }}</td>
+            <td>{{ user.empresa[0].nome }}</td>
+            <td>{{ user.cargo.nome }}</td>
+            <td>{{ user.ativo }}</td>
             <td>
-              <button class="btn bg-roxo btn-block text-claro">
+              <button
+                *ngIf="user.ativo == false"
+                class="btn bg-ciano btn-block"
+              >
+                Ativar
+              </button>
+              <button *ngIf="user.ativo == true" class="btn bg-roxo btn-block">
                 Desativar
               </button>
             </td>
-          </tr>
-          <tr>
-            <th scope="row">Wesley Nascimento Silva</th>
-            <td>wesley.silva174@fatec.sp.gov.br</td>
-            <td>Fatec Baixada Santista - Rubens Lara</td>
-            <td>Estudante</td>
-            <td>Inativo</td>
-            <td><button class="btn bg-ciano btn-block">Ativar</button></td>
-          </tr>
-          <tr>
-            <th scope="row">Karoline Teodoro da Silva</th>
-            <td>karoline.silva9@fatec.sp.gov.br</td>
-            <td>Fatec Baixada Santista - Rubens Lara</td>
-            <td>Estudante</td>
-            <td>Inativo</td>
-            <td><button class="btn bg-ciano btn-block">Ativar</button></td>
-          </tr>
-          <tr>
-            <th scope="row">Pedro Luiz Souza Salvino</th>
-            <td>pedro.salvino@fatec.sp.gov.br</td>
-            <td>Fatec Baixada Santista - Rubens Lara</td>
-            <td>Estudante</td>
-            <td>Ativo</td>
-            <td>
-              <button class="btn bg-roxo btn-block text-claro">
-                Desativar
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Wesley Nascimento Silva</th>
-            <td>wesley.silva174@fatec.sp.gov.br</td>
-            <td>Fatec Baixada Santista - Rubens Lara</td>
-            <td>Estudante</td>
-            <td>Inativo</td>
-            <td><button class="btn bg-ciano btn-block">Ativar</button></td>
-          </tr>
-          <tr>
-            <th scope="row">Karoline Teodoro da Silva</th>
-            <td>karoline.silva9@fatec.sp.gov.br</td>
-            <td>Fatec Baixada Santista - Rubens Lara</td>
-            <td>Estudante</td>
-            <td>Inativo</td>
-            <td><button class="btn bg-ciano btn-block">Ativar</button></td>
-          </tr>
-          <tr>
-            <th scope="row">Pedro Luiz Souza Salvino</th>
-            <td>pedro.salvino@fatec.sp.gov.br</td>
-            <td>Fatec Baixada Santista - Rubens Lara</td>
-            <td>Estudante</td>
-            <td>Ativo</td>
-            <td>
-              <button class="btn bg-roxo btn-block text-claro">
-                Desativar
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Wesley Nascimento Silva</th>
-            <td>wesley.silva174@fatec.sp.gov.br</td>
-            <td>Fatec Baixada Santista - Rubens Lara</td>
-            <td>Estudante</td>
-            <td>Inativo</td>
-            <td><button class="btn bg-ciano btn-block">Ativar</button></td>
           </tr>
         </tbody>
       </table>

@@ -85,7 +85,7 @@ export class UsuarioService {
 
   getUsuarios() {
     this.http
-      .get<UsuarioApiResponse>(`${this.global.api}/usuario/page`)
+      .get<UsuarioApiResponse>(`${this.global.api}/usuario`)
       .subscribe((data) => {
         if (data) this.usuarios = data.content;
       });
