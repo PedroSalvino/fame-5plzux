@@ -28,7 +28,6 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit() {}
 
-  id: '';
   nome = '';
   email: '';
   senha: '';
@@ -36,29 +35,24 @@ export class PerfilComponent implements OnInit {
   cargo: '';
 
   atualizarPerfil() {
-    if (
-      this.nome !== '' &&
-      this.email !== '' &&
-      this.empresa !== '' &&
-      this.cargo !== ''
-    ) {
-      this.usuarioPut = {
-        id: this.usuario.usuarioPicked.id,
-        nome: this.nome,
-        login: this.email,
-        senha: this.senha,
-        terminal: {
-          id: this.terminal.terminalPicked.id,
-          nome: this.terminal.terminalPicked.nome,
-          cnpj: this.terminal.terminalPicked.cnpj,
+    this.usuarioPut = {
+      id: this.usuarioPicked.id,
+      nome: this.usuarioPicked.nome,
+      login: this.usuarioPicked.login,
+      senha: this.usuarioPicked.senha,
+      terminal: [
+        {
+          id: this.usuarioPicked.terminal[0].id,
+          nome: this.usuarioPicked.terminal[0].nome,
+          cnpj: this.usuarioPicked.terminal[0].cnpj,
         },
-        cargo: {
-          id: this.cargoService.cargoPicked.id,
-          cargo: this.cargoService.cargoPicked.cargo,
-        },
-      };
+      ],
+      cargo: {
+        id: this.usuarioPicked.cargo.id,
+        cargo: this.usuarioPicked.cargo.cargo,
+      },
+    };
 
-      this.usuario.putUsuario(this.usuarioPut);
-    }
+    this.usuario.putUsuario(this.usuarioPut);
   }
 }

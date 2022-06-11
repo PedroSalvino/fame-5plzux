@@ -99,11 +99,14 @@ export interface PutUsuario {
   nome?: string;
   login?: string;
   senha?: string;
-  terminal?: {
-    id: number;
-    nome: string;
-    cnpj: string;
-  };
+  ativo?: boolean;
+  terminal?: [
+    {
+      id: number;
+      nome: string;
+      cnpj: string;
+    }
+  ];
   cargo?: {
     id: number;
     cargo: string;

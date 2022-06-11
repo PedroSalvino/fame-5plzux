@@ -20,6 +20,7 @@
             aria-label="Nome Completo"
             id="nomeuser"
             [(ngModel)]="this.nomeuser"
+            required
           />
         </div>
         <!-- E-mail -->
@@ -36,6 +37,7 @@
             aria-label="E-mail Corporativo"
             id="emailuser"
             [(ngModel)]="this.emailuser"
+            required
           />
         </div>
         <!-- Empresa -->
@@ -50,8 +52,9 @@
             id="empresauser"
             [(ngModel)]="this.empresauser"
             (change)="getTerminal()"
+            required
           >
-            <option value="0" selected disabled>Selecione o Terminal</option>
+            <option value="" selected disabled>Selecione o Terminal</option>
             <option
               *ngFor="let terminal of terminal.terminais"
               value="{{ terminal.id }}"
@@ -73,6 +76,7 @@
             id="cargouser"
             [(ngModel)]="this.cargouser"
             (change)="getCargo()"
+            required
           >
             <option value="0" selected disabled>Selecione o Cargo</option>
             <option *ngFor="let cargo of cargo.cargos" value="{{ cargo.id }}">
@@ -93,12 +97,13 @@
             aria-label="Senha"
             id="senhauser"
             [(ngModel)]="this.senhauser"
+            required
           />
         </div>
 
         <div>
           <button
-            type="button"
+            type="submit"
             class="btn bg-roxo text-claro btn-block col-md-8 mx-auto"
             data-toggle="modal"
             data-target="#confCadastro"
@@ -213,7 +218,11 @@
   tabindex="-1"
   aria-labelledby="successModalLabel"
   aria-hidden="true"
-  [ngStyle]="{ display: displayStyleSucesso }"
+  [ngStyle]="{
+    display: displayStyleSucesso,
+    opacity: opacitySucesso,
+    backgroundColor: bgSucesso
+  }"
 >
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -247,18 +256,22 @@
 
 <div
   class="modal fade"
-  id="successModal"
+  id="erroModal"
   tabindex="-1"
-  aria-labelledby="successModalLabel"
+  aria-labelledby="erroModalLabel"
   aria-hidden="true"
-  [ngStyle]="{ display: displayStyleErro }"
+  [ngStyle]="{
+    display: displayStyleErro,
+    opacity: opacityErro,
+    backgroundColor: bgErro
+  }"
 >
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header bg-danger">
-        <p class="modal-title mx-auto text-claro" id="successModalLabel">
+        <p class="modal-title mx-auto text-claro" id="erroModalLabel">
           <span><i class="fas fa-exclamation-circle"></i></span>
-          Cadastro Incorreto
+          Atenção
         </p>
       </div>
       <div class="modal-body">
@@ -274,7 +287,7 @@
         <button
           type="button"
           class="btn bg-cinza text-claro"
-          data-dismiss="modal"
+          (click)="fecharModalErro()"
         >
           Entendido
         </button>

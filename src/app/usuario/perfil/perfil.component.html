@@ -19,7 +19,7 @@
             aria-label="Nome Completo"
             id="nomeperfil"
             value="{{ this.usuarioPicked.nome }}"
-            [(ngModel)]="this.nome"
+            #nome
           />
         </div>
         <div class="input-group my-5">
@@ -35,7 +35,6 @@
             aria-label="E-mail Corporativo"
             id="emailperfil"
             value="{{ this.usuarioPicked.login }}"
-            [(ngModel)]="this.email"
           />
         </div>
         <div class="input-group my-5">
@@ -49,7 +48,6 @@
             class="form-control"
             aria-label="CPF"
             id="senhaperfil"
-            [(ngModel)]="this.senha"
           />
         </div>
         <div class="input-group my-5">
@@ -66,7 +64,6 @@
             placeholder="Empresa"
             aria-label="Empresa"
             id="empresaperfil"
-            [(ngModel)]="this.empresa"
             value="{{ this.usuarioPicked.terminal[0].nome }}"
             readonly
           />
@@ -85,7 +82,6 @@
             placeholder="Cargo"
             aria-label="Cargo"
             id="cargoperfil"
-            [(ngModel)]="this.cargo"
             value="{{ this.usuarioPicked.cargo.cargo }}"
             readonly
           />
@@ -141,6 +137,7 @@
           type="button"
           class="btn bg-roxo text-claro"
           data-dismiss="modal"
+          (click)="atualizarPerfil()"
         >
           Confirmar
         </button>

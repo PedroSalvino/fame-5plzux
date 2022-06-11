@@ -38,7 +38,12 @@ export class CadastroComponent implements OnInit {
   passuser: '';
 
   displayStyleSucesso = 'none';
+  opacitySucesso = '0';
+  bgSucesso = '';
+
   displayStyleErro = 'none';
+  opacityErro = '0';
+  bgErro = '';
 
   getTerminal() {
     let index = parseInt(this.empresauser);
@@ -83,28 +88,41 @@ export class CadastroComponent implements OnInit {
 
       this.usuario.postUsuario(this.usuarioPost);
     } else {
-      console.error();
+      this.abrirModalErro();
     }
   }
 
   loginUsuario() {
-    console.log(this.usuario.usuarioPicked);
-    if (this.loginuser != '' && this.passuser != '') {
+    if (
+      (this.loginuser == '' && this.passuser == '') ||
+      (this.loginuser == undefined && this.passuser == undefined) ||
+      (this.loginuser == null && this.passuser == null)
+    ) {
+      this.abrirModalErro();
+    } else {
       this.usuario.login(this.loginuser, this.passuser);
     }
   }
 
   abrirModalSucesso() {
     this.displayStyleSucesso = 'block';
+    this.bgSucesso = '#33333355';
+    this.opacitySucesso = '100';
   }
   fecharModalSucesso() {
     this.displayStyleSucesso = 'none';
+    this.bgSucesso = '';
+    this.opacitySucesso = '0';
   }
 
   abrirModalErro() {
     this.displayStyleErro = 'block';
+    this.bgErro = '#33333355';
+    this.opacityErro = '100';
   }
   fecharModalErro() {
     this.displayStyleErro = 'none';
+    this.opacityErro = '0';
+    this.bgErro = '';
   }
 }
